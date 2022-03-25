@@ -1,0 +1,43 @@
+.footer {
+	position: relative;
+	width: 100%;
+}
+.footerIconContainer {
+	position: relative;
+	top: 10px;
+	left: 45px;
+	display: flex;
+	justify-content: space-between;
+	width: 300px;
+	padding-bottom: 10px;
+}
+.footerIconContainer:hover {
+	cursor: pointer;
+}
+.footerListContainer {
+	position: relative;
+	color: gray;
+	width: 100%;
+	font-size: 0.85rem;
+	margin-top: 50px;
+	padding-bottom: 30px;
+	text-align: center;
+}
+.footerListContainer > ul {
+	display: flex;
+}
+.footerListContainer > ul > li {
+	list-style: none;
+	padding: 20px;
+}
+.footerListContainer > ul > li:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+.footerExtra {
+	color: gray;
+	font-size: 0.69rem;
+	padding-bottom: 15px;
+	display: flex;
+	justify-content: center;
+}
