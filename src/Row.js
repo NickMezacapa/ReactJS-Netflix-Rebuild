@@ -5,10 +5,11 @@ import YouTube from "react-youtube";
 import movieTrailer from "movie-trailer";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
+// Base URL for movie database API
 
 function Row({ title, fetchUrl, isLargeRow }) {
-	const [movies, setMovies] = useState([]);
-	const [trailerUrl, setTrailerUrl] = useState("");
+	const [movies, setMovies] = useState([]); // movies is an array of objects
+	const [trailerUrl, setTrailerUrl] = useState(""); // trailerUrl is a string
 
 	useEffect(() => {
 		async function fetchData() {
@@ -18,9 +19,15 @@ function Row({ title, fetchUrl, isLargeRow }) {
 		}
 		fetchData();
 	}, [fetchUrl]);
+	// fetchData is an async function that returns a promise.
+	// The promise is then handled by the axios.get function.
+	// The axios.get function returns a promise.
+	// The promise is then handled by the setMovies function.
+	// The setMovies function is then called with the data from the promise.
+	// The data is then passed to the setMovies function.
 
 	const opts = {
-		height: "390",
+		height: "390", // movie trailer playback options
 		width: "100%",
 		playerVars: {
 			autoplay: 1,
@@ -39,6 +46,11 @@ function Row({ title, fetchUrl, isLargeRow }) {
 				.catch((error) => console.log(error));
 		}
 	};
+	// The handleClick function is called when a movie is clicked.
+	// The movie is passed to the movieTrailer function.
+	// The movieTrailer function returns a promise.
+	// The promise is then handled by the setTrailerUrl function.
+	// The setTrailerUrl function is then called with the data from the promise.
 
 	return (
 		<div className="row">
@@ -48,7 +60,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
 					<img
 						key={movie.id}
 						onClick={() => handleClick(movie)}
-						className={`rowPoster ${isLargeRow && "rowPosterLarge"}`}
+						className={`rowPoster ${isLargeRow && "rowPosterLarge"}`} // classNames to determine row styling for larger posters
 						src={`${base_url}${
 							isLargeRow ? movie.poster_path : movie.poster_path
 						}`}

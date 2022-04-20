@@ -1,5 +1,5 @@
 const API_KEY = "8c5b1b859aa9929de425b18c67199658";
-
+// API requests stored in variables
 const requests = {
 	fetchTrending: `/trending/all/week?api_key=${API_KEY}&language=en-US`,
 	fetchNetflixOriginals: `/discover/tv?api_key=${API_KEY}&with_networks=213`,

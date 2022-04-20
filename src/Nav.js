@@ -4,13 +4,21 @@ import { FaSearch } from "react-icons/fa";
 
 function Nav() {
 	const [show, handleShow] = useState(false);
+	// show is a boolean.
+	// handleShow is a function that takes a boolean as an argument.
+	// handleShow is a function that sets the state of show to the argument.
+	// handleShow is a function that is called when the search icon is clicked.
 
+	// useEffect hook to hide nav visiblity after user has scrollled 25px
 	useEffect(() => {
 		window.addEventListener("scroll", () => {
 			if (window.scrollY > 25) {
 				handleShow(true);
 			} else handleShow(false);
 		});
+		// The window.scrollY function returns the vertical scroll position of the window.
+		// If the window has scrolled more than 25px, the handleShow function is called.
+		// The handleShow function is called with a boolean argument.
 		return () => {
 			window.removeEventListener("scroll");
 		};

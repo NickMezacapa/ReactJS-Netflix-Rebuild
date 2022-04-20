@@ -4,6 +4,10 @@ import SignupScreen from "./SignupScreen";
 
 function LoginPage() {
 	const [signIn, setSignIn] = useState(false);
+	// signIn is a boolean.
+	// setSignIn is a function that takes a boolean as an argument.
+	// setSignIn is a function that sets the state of signIn to the argument.
+	// setSignIn is a function that is called when the sign in button is clicked.
 
 	return (
 		<div className="loginScreen">
@@ -13,12 +17,14 @@ function LoginPage() {
 					alt="Netflix Logo"
 					className="loginScreen-logo"
 				/>
+				{/* Call setSignIn on button click */}
 				<button onClick={() => setSignIn(true)} className="loginScreen-button">
 					Sign in
 				</button>
 				<div className="loginScreen-gradient" />
 			</div>
 			<div className="loginScreen-body">
+				{/* If signIn is true, render SignupScreen */}
 				{signIn ? (
 					<SignupScreen />
 				) : (
